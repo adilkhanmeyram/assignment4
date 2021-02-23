@@ -18,6 +18,8 @@ public class Employee {
         setJob_id(job_id);
     }
 
+
+    //constructor that was created to get the full information about employee
     public Employee(int id, String firstName, String lastName, int job_id) {
         setId(id);
         setFirstName(firstName);
@@ -25,6 +27,8 @@ public class Employee {
         setJob_id(job_id);
     }
 
+
+    //constructor that was created to get the full information about employee
     public Employee(String firstName, String lastName, String job_name, int fixed_salary, String department_name) {
         setFirstName(firstName);
         setLastName(lastName);

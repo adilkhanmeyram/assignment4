@@ -4,7 +4,6 @@ import kz.aitu.oop.practice.assignment4.data.interfaces.IDB;
 
 import java.sql.*;
 
-
 public class PostgresDB implements IDB {
     @Override
     public Connection getConnection() throws SQLException, ClassNotFoundException {

@@ -6,8 +6,7 @@ import java.util.List;
 
 public interface IEmployeeRepository {
     boolean createEmployee(Employee employee);
+    boolean fireEmployee(Employee employee);
     Employee getEmployee(int id);
     List<Employee> getAllEmployees();
-
-    boolean fireEmployee(Employee employee);
 }

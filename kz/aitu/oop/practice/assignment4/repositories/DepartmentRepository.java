@@ -20,7 +20,7 @@ public class DepartmentRepository implements IDepartmentRepository {
         Connection con = null;
         try {
             con = db.getConnection();
-            String sql = "INSERT INTO departments(name) VALUES (?)";
+            String sql = "INSERT INTO departments(department_name) VALUES (?)";
             PreparedStatement st = con.prepareStatement(sql);
 
             st.setString(1, department.getName());
@@ -54,7 +54,7 @@ public class DepartmentRepository implements IDepartmentRepository {
             ResultSet rs = st.executeQuery();
             if (rs.next()) {
                 Department department = new Department(rs.getInt("id"),
-                        rs.getString("name"));
+                        rs.getString("department_name"));
 
                 return department;
             }
@@ -84,7 +84,7 @@ public class DepartmentRepository implements IDepartmentRepository {
             List<Department> departments = new ArrayList<>();
             while (rs.next()) {
                 Department department = new Department(rs.getInt("id"),
-                        rs.getString("name"));
+                        rs.getString("department_name"));
 
                 departments.add(department);
             }

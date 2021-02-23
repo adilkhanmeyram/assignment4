@@ -43,6 +43,34 @@ public class EmployeeRepository implements IEmployeeRepository {
         return false;
     }
 
+
+    @Override
+    public boolean fireEmployee(Employee employee) {
+        Connection con = null;
+
+        try {
+            con = db.getConnection();
+            String sql = "DELETE FROM employees WHERE first_name = " + "\'" + employee.getFirstName()
+                    + "\'" + "AND last_name="
+                    + "\'" + employee.getLastName() + "\'";
+            PreparedStatement st = con.prepareStatement(sql);
+
+            boolean executed = st.execute();
+            return executed;
+        } catch (SQLException throwables) {
+            throwables.printStackTrace();
+        } catch (ClassNotFoundException e) {
+            e.printStackTrace();
+        } finally {
+            try {
+                con.close();
+            } catch (SQLException throwables) {
+                throwables.printStackTrace();
+            }
+        }
+        return false;
+    }
+
     @Override
     public Employee getEmployee(int id) {
         Connection con = null;
@@ -116,31 +144,5 @@ public class EmployeeRepository implements IEmployeeRepository {
         return null;
     }
 
-    @Override
-    public boolean fireEmployee(Employee employee) {
-        Connection con = null;
-
-        try {
-            con = db.getConnection();
-            String sql = "DELETE FROM employees WHERE first_name = " + "\'" + employee.getFirstName()
-                    + "\'" + "AND last_name="
-                    + "\'" + employee.getLastName() + "\'";
-            PreparedStatement st = con.prepareStatement(sql);
-
-            boolean executed = st.execute();
-            return executed;
-        } catch (SQLException throwables) {
-            throwables.printStackTrace();
-        } catch (ClassNotFoundException e) {
-            e.printStackTrace();
-        } finally {
-            try {
-                con.close();
-            } catch (SQLException throwables) {
-                throwables.printStackTrace();
-            }
-        }
-        return false;
-    }
 
 }

@@ -100,7 +100,7 @@ public class MyApplication {
             System.out.println();
             System.out.println("Select option");
             System.out.println("1. Get job by id");
-            //System.out.println("2. Get all jobs");
+            System.out.println("2. Get all jobs");
             System.out.println("3. Create job");
             System.out.println("4. Main menu");
             System.out.println("0. Exit");
@@ -135,7 +135,7 @@ public class MyApplication {
             System.out.println();
             System.out.println("Select option");
             System.out.println("1. Get department by id");
-            //System.out.println("2. Get all departments");
+            System.out.println("2. Get all departments");
             System.out.println("3. Create department");
             System.out.println("4. Main menu");
             System.out.println("0. Exit");
@@ -264,6 +264,8 @@ public class MyApplication {
         String last_name = scanner.next();
 
         String response = employeeController.fireEmployee(first_name, last_name);
+        System.out.println(response);
+
     }
 
 
