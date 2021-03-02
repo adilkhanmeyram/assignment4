@@ -169,6 +169,7 @@ public class MyApplication {
     public void createDepartment() {
         System.out.println("Please enter name");
         String name = scanner.next();
+        name += scanner.nextLine();
 
         String response = departmentController.createDepartment(name);
         System.out.println(response);
